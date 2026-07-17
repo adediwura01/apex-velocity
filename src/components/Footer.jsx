@@ -17,22 +17,6 @@ function Footer() {
               Secure. Intelligent. Built for the future of digital investing.
             </p>
 
-            <div className="footer-socials">
-
-              <a href="#">
-                <FaGithub />
-              </a>
-
-              <a href="#">
-                <FaLinkedin />
-              </a>
-
-              <a href="#">
-                <FaXTwitter />
-              </a>
-
-            </div>
-
           </div>
 
           <div className="footer-links">
@@ -82,6 +66,23 @@ function Footer() {
           </div>
 
         </div>
+
+        <div className="footer-socials">
+
+              <a href="#">
+                <FaGithub />
+              </a>
+
+              <a href="#">
+                <FaLinkedin />
+              </a>
+
+              <a href="#">
+                <FaXTwitter />
+              </a>
+
+            </div>
+        
 
         <div className="footer-bottom">
 

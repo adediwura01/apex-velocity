@@ -8,12 +8,18 @@ function Navbar() {
 
   // Lock body scroll when menu opens
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "auto";
 
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [isOpen]);
+  if (isOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
+
+  return () => {
+    document.body.style.overflow = "";
+  };
+
+}, [isOpen]);
 
   useEffect(() => {
 

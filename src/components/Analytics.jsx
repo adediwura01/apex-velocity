@@ -1,6 +1,6 @@
 import "../css/Analytics.css";
 
-import PortfolioChart from "./portfolioChart";
+import PortfolioChart from "./PortfolioChart";
 import AllocationChart from "./AllocationChart";
 import VolumeChart from "./VolumeChart";
 

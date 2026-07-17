@@ -136,3 +136,62 @@
     border-color:rgba(168,85,247,.25);
     background:rgba(255,255,255,.05);
 }
+
+
+@media (max-width:768px){
+
+    .platform-preview{
+        padding:6rem 6%;
+    }
+
+    /* ---------- Header ---------- */
+
+    .platform-header{
+        margin-bottom:3rem;
+    }
+
+    .platform-header h2{
+        font-size:2.4rem;
+        line-height:1.2;
+    }
+
+    .platform-header p{
+        font-size:1rem;
+    }
+
+    /* ---------- Dashboard ---------- */
+
+    .dashboard-mockup{
+        min-height:auto;
+        padding:1.5rem;
+        gap:1.5rem;
+        border-radius:26px;
+    }
+
+    /* ---------- Top ---------- */
+
+    .dashboard-top{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:1rem;
+    }
+
+    .dashboard-top h3{
+        font-size:1.8rem;
+    }
+
+    .dashboard-button{
+        width:100%;
+        justify-content:center;
+    }
+
+    /* ---------- Assets ---------- */
+
+    .dashboard-assets{
+        grid-template-columns:1fr;
+    }
+
+    .asset-item{
+        padding:1rem;
+    }
+}

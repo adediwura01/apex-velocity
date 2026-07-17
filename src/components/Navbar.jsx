@@ -1,43 +1,193 @@
 import "../css/navbar.css";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ShieldCheck, ArrowUpRight } from "lucide-react";
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Lock body scroll when menu opens
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
+  const menuVariants = {
+    hidden: {
+      opacity: 0,
+      y: -30,
+    },
+
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.45,
+        when: "beforeChildren",
+        staggerChildren: 0.08,
+      },
+    },
+
+    exit: {
+      opacity: 0,
+      y: -30,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.35,
+      },
+    },
+  };
+
+  const closeMenu = () => setIsOpen(false);
+
   return (
-    <header className="navbar">
+    <>
+      <header className="navbar">
 
-      <div className="logo">
+        <div className="logo">
 
-        <div className="logo-icon">
-          <ShieldCheck size={18} />
+          <div className="logo-icon">
+            <ShieldCheck size={18} />
+          </div>
+
+          <h2>
+            Neo<span>Vault</span>
+          </h2>
+
         </div>
 
-        <h2>
-          Neo<span>Vault</span>
-        </h2>
+        <nav className="desktop-nav">
 
-      </div>
+          <a href="#">Products</a>
 
-      <nav>
+          <a href="#">Developers</a>
 
-        <a href="#">Products</a>
+          <a href="#">Security</a>
 
-        <a href="#">Developers</a>
+          <a href="#">Pricing</a>
 
-        <a href="#">Security</a>
+        </nav>
 
-        <a href="#">Pricing</a>
+        <button className="desktop-btn">
 
-      </nav>
+          Launch App
 
-      <button>
+          <ArrowUpRight size={16} />
 
-        Launch App
+        </button>
 
-        <ArrowUpRight size={16} />
+        <button
+          className={`menu-toggle ${isOpen ? "active" : ""}`}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle Menu"
+        >
 
-      </button>
+          <span></span>
+          <span></span>
+          <span></span>
 
-    </header>
+        </button>
+
+      </header>
+
+      <AnimatePresence>
+
+        {isOpen && (
+
+          <motion.div
+            className="mobile-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closeMenu}
+          >
+
+            <motion.div
+              className="mobile-menu"
+              variants={menuVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              onClick={(e) => e.stopPropagation()}
+            >
+
+              <div className="mobile-header">
+
+                <h2>
+                  Neo<span>Vault</span>
+                </h2>
+
+              </div>
+
+              <motion.a
+                href="#"
+                variants={itemVariants}
+                onClick={closeMenu}
+              >
+                Products
+              </motion.a>
+
+              <motion.a
+                href="#"
+                variants={itemVariants}
+                onClick={closeMenu}
+              >
+                Developers
+              </motion.a>
+
+              <motion.a
+                href="#"
+                variants={itemVariants}
+                onClick={closeMenu}
+              >
+                Security
+              </motion.a>
+
+              <motion.a
+                href="#"
+                variants={itemVariants}
+                onClick={closeMenu}
+              >
+                Pricing
+              </motion.a>
+
+              <motion.button
+                variants={itemVariants}
+                className="mobile-btn"
+                onClick={closeMenu}
+              >
+
+                Launch App
+
+                <ArrowUpRight size={16} />
+
+              </motion.button>
+
+            </motion.div>
+
+          </motion.div>
+
+        )}
+
+      </AnimatePresence>
+    </>
   );
 }
 

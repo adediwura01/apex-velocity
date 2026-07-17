@@ -1,24 +1,22 @@
+
 .navbar{
-    position:fixed;
-    top:0;
-    left:0;
-
-    width:100%;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:22px 7%;
-
-    z-index:1000;
-
-    backdrop-filter:blur(18px);
-
-    background:rgba(3,4,11,.55);
-
-    border-bottom:1px solid rgba(255,255,255,.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 7%;
+    z-index: 1000;
+    backdrop-filter: blur(18px);
+    background: rgba(3,4,11,.55);
+    border-bottom: 1px solid rgba(255,255,255,.05);
 }
+
+/* ===========================
+   LOGO
+=========================== */
 
 .logo{
     display:flex;
@@ -27,88 +25,208 @@
 }
 
 .logo-icon{
-
     width:40px;
     height:40px;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     border-radius:12px;
-
     background:rgba(168,85,247,.08);
-
     border:1px solid rgba(168,85,247,.15);
-
-    color:#a855f7;
+    color:#A855F7;
 }
 
 .logo h2{
-
     font-size:1.35rem;
-
     font-weight:800;
-
     letter-spacing:-1px;
 }
 
 .logo span{
-
-    color:#a855f7;
+    color:#A855F7;
 }
 
-nav{
+/* ===========================
+   DESKTOP NAV
+=========================== */
 
+.desktop-nav{
     display:flex;
-
     gap:2.5rem;
 }
 
-nav a{
-
+.desktop-nav a{
     text-decoration:none;
-
-    color:#cbd5e1;
-
+    color:#CBD5E1;
     font-size:.9rem;
-
+    position:relative;
     transition:.35s;
 }
 
-nav a:hover{
-
+.desktop-nav a:hover{
     color:white;
 }
 
-.navbar button{
+.desktop-nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:#A855F7;
+    transition:.3s;
+}
 
+.desktop-nav a:hover::after{
+    width:100%;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.desktop-btn,
+.mobile-btn{
     display:flex;
-
     align-items:center;
-
+    justify-content:center;
     gap:.6rem;
-
     padding:.9rem 1.3rem;
-
-    background:rgba(255,255,255,.03);
-
+    border:none;
+    border-radius:14px;
+    background:#A855F7;
     color:white;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:12px;
-
     cursor:pointer;
-
     transition:.35s;
 }
 
-.navbar button:hover{
+.desktop-btn:hover,
+.mobile-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(168,85,247,.35);
+}
 
-    transform:translateY(-2px);
 
-    background:#a855f7;
+.menu-toggle{
+    display:none;
+    width:46px;
+    height:46px;
+    padding:0;
+    background:none;
+    border:none;
+    cursor:pointer;
+    position:relative;
+    z-index:1200;
+}
 
-    border-color:#a855f7;
+.menu-toggle span{
+    position:absolute;
+    left:9px;
+    width:28px;
+    height:2px;
+    border-radius:20px;
+    background:white;
+    transition:
+        transform .35s ease,
+        opacity .25s ease,
+        top .35s ease;
+}
+
+.menu-toggle span:nth-child(1){
+    top:14px;
+}
+
+.menu-toggle span:nth-child(2){
+    top:22px;
+}
+
+.menu-toggle span:nth-child(3){
+    top:30px;
+}
+
+/* -------- ACTIVE -------- */
+
+.menu-toggle.active span:nth-child(1){
+    top:22px;
+    transform:rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2){
+    opacity:0;
+}
+
+.menu-toggle.active span:nth-child(3){
+    top:22px;
+    transform:rotate(-45deg);
+}
+
+.mobile-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    backdrop-filter:blur(16px);
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    z-index:1100;
+}
+
+.mobile-menu{
+    width:100%;
+    min-height:100vh;
+    background:rgba(8,11,20,.94);
+    backdrop-filter:blur(30px);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding-top:120px;
+}
+
+.mobile-header{
+    margin-bottom:70px;
+}
+
+.mobile-header h2{
+    font-size:2rem;
+}
+
+.mobile-header span{
+    color:#A855F7;
+}
+
+.mobile-menu a{
+    text-decoration:none;
+    color:white;
+    font-size:1.3rem;
+    font-weight:600;
+    margin-bottom:2rem;
+    transition:.3s;
+}
+
+.mobile-menu a:hover{
+    color:#A855F7;
+}
+
+.mobile-btn{
+    margin-top:3rem;
+    padding:1rem 2rem;
+}
+
+
+
+@media(max-width:768px){
+
+    .desktop-nav{
+        display:none;
+    }
+
+    .desktop-btn{
+        display:none;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
 }

@@ -69,7 +69,7 @@ function Footer() {
 
         <div className="footer-socials">
 
-              <a href="#">
+              <a href="https://github.com/adediwura01">
                 <FaGithub />
               </a>
 

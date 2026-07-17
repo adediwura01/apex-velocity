@@ -15,6 +15,28 @@ function Navbar() {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+
+  const handleEscape = (e) => {
+
+    if (e.key === "Escape") {
+
+      setIsOpen(false);
+
+    }
+
+  };
+
+  window.addEventListener("keydown", handleEscape);
+
+  return () => {
+
+    window.removeEventListener("keydown", handleEscape);
+
+  };
+
+}, []);
+
   const menuVariants = {
     hidden: {
       opacity: 0,

@@ -90,7 +90,7 @@ function Footer() {
           </span>
 
           <span>
-            Designed & Built with React
+            Adeniregun Emmanuel
           </span>
 
         </div>

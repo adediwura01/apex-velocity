@@ -209,3 +209,83 @@
     color:var(--muted);
     font-size:.85rem;
 }
+
+@media (max-width: 768px){
+
+    .features{
+        padding:6rem 6%;
+    }
+
+    /* ---------- Header ---------- */
+
+    .features-header{
+        margin-bottom:3rem;
+    }
+
+    .features-header h2{
+        font-size:2.4rem;
+        line-height:1.2;
+    }
+
+    .features-header p{
+        font-size:1rem;
+    }
+
+    /* ---------- Grid ---------- */
+    .features-grid{
+        grid-template-columns:1fr;
+        gap:1.5rem;
+    }
+
+    /* ---------- Featured Card ---------- */
+
+    .featured{
+        grid-row:auto;
+        min-height:auto;
+    }
+
+    .featured h3{
+        font-size:2rem;
+        max-width:100%;
+    }
+
+    .featured p{
+        max-width:100%;
+    }
+
+    /* ---------- Cards ---------- */
+
+    .feature-card{
+        padding:2rem;
+    }
+
+    .feature-card h3{
+        font-size:1.45rem;
+    }
+
+    /* ---------- AI Widget ---------- */
+
+    .ai-widget{
+        margin:2rem 0;
+        padding:1.2rem;
+    }
+
+    .ai-score{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:.5rem;
+    }
+
+    .ai-score h4{
+        font-size:1.7rem;
+    }
+
+    .ai-stats{
+        grid-template-columns:1fr;
+    }
+
+    .ai-footer{
+        flex-wrap:wrap;
+        line-height:1.6;
+    }
+}

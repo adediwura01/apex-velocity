@@ -55,6 +55,7 @@ function PortfolioChart() {
     },
 
     xaxis: {
+      
       categories: portfolioData.map((item) => item.month),
 
       labels: {
@@ -70,6 +71,10 @@ function PortfolioChart() {
       axisTicks: {
         show: false,
       },
+
+      labels:{
+    tickAmount:6
+}
     },
 
     yaxis: {

@@ -332,3 +332,94 @@
     font-size: 1.6rem;
     color: #A855F7;
 }
+
+@media (max-width: 768px){
+
+    .analytics{
+        padding:6rem 6%;
+    }
+
+    /* ---------- Header ---------- */
+
+    .analytics-header{
+        margin-bottom:3rem;
+        text-align:center;
+    }
+
+    .analytics-header h2{
+        font-size:2.4rem;
+        line-height:1.2;
+    }
+
+    .analytics-header p{
+        font-size:1rem;
+        max-width:100%;
+    }
+
+    /* ---------- KPI Cards ---------- */
+
+    .analytics-kpis{
+        grid-template-columns:1fr;
+        gap:1rem;
+    }
+
+    .kpi-card{
+        padding:1.5rem;
+    }
+
+    .kpi-card h3{
+        font-size:1.6rem;
+    }
+
+    /* ---------- Charts ---------- */
+
+    .analytics-grid{
+        grid-template-columns:1fr;
+        gap:1.5rem;
+    }
+
+    .large{
+        min-height:auto;
+    }
+
+    .chart{
+        min-height:auto;
+        padding:1.5rem;
+        overflow:hidden;
+    }
+
+    .chart.large{
+        padding:1.5rem;
+    }
+
+    /* ---------- Chart Header ---------- */
+
+    .chart-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:1rem;
+        margin-bottom:1.5rem;
+    }
+
+    .chart-button{
+        width:100%;
+        justify-content:center;
+    }
+
+    /* ---------- Volume Summary ---------- */
+
+    .volume-summary{
+        grid-template-columns:1fr;
+        gap:1rem;
+    }
+
+    /* ---------- Forecast ---------- */
+
+    .forecast-section{
+        margin-top:2rem;
+    }
+
+    .forecast-section strong{
+        font-size:1.35rem;
+    }
+}

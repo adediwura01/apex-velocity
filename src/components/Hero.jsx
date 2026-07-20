@@ -3,7 +3,7 @@ import { ArrowRight, Play, ShieldCheck } from "lucide-react";
 
 function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" id="hero">
 
       <div className="hero-left">
 

@@ -3,7 +3,7 @@ import DashboardMockup from "./DashboardMockup";
 
 function PlatformPreview() {
   return (
-    <section className="platform-preview">
+    <section className="platform-preview" id="platform-preview">
 
       <div className="platform-header">
 

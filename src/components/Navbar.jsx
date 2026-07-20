@@ -103,13 +103,13 @@ function Navbar() {
 
         <nav className="desktop-nav">
 
-          <a href="#">Products</a>
+          <a href="#platform-preview">Products</a>
 
-          <a href="#">Developers</a>
+          <a href="#features">Developers</a>
 
-          <a href="#">Security</a>
+          <a href="#analytics">Security</a>
 
-          <a href="#">Pricing</a>
+          <a href="#cta">Pricing</a>
 
         </nav>
 
@@ -165,7 +165,7 @@ function Navbar() {
               </div>
 
               <motion.a
-                href="#"
+                href="#platform-preview"
                 variants={itemVariants}
                 onClick={closeMenu}
               >
@@ -173,7 +173,7 @@ function Navbar() {
               </motion.a>
 
               <motion.a
-                href="#"
+                href="#features"
                 variants={itemVariants}
                 onClick={closeMenu}
               >
@@ -181,7 +181,7 @@ function Navbar() {
               </motion.a>
 
               <motion.a
-                href="#"
+                href="#analytics"
                 variants={itemVariants}
                 onClick={closeMenu}
               >
@@ -189,7 +189,7 @@ function Navbar() {
               </motion.a>
 
               <motion.a
-                href="#"
+                href="#cta"
                 variants={itemVariants}
                 onClick={closeMenu}
               >

@@ -4,7 +4,7 @@ function CTA() {
   return (
     <section className="cta">
 
-      <div className="cta-container">
+      <div className="cta-container" id="cta">
 
         <span className="section-tag">
           START YOUR JOURNEY

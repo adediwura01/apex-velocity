@@ -7,7 +7,7 @@ import VolumeChart from "./VolumeChart";
 
 function Analytics() {
   return (
-    <section className="analytics">
+    <section className="analytics" id="analytics">
 
       <div className="analytics-header">
 

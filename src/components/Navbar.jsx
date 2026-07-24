@@ -1,7 +1,7 @@
 import "../css/navbar.css";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ShieldCheck, ArrowUpRight } from "lucide-react";
+import { ShieldCheck, ArrowUpRight, X} from "lucide-react";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -99,6 +99,8 @@ function Navbar() {
             Neo<span>Vault</span>
           </h2>
 
+          
+
         </div>
 
         <nav className="desktop-nav">
@@ -157,10 +159,21 @@ function Navbar() {
             >
 
               <div className="mobile-header">
+                
+                <div className="logo">
+                  <div className="logo-icon">
+                   <ShieldCheck size={18} />
+                </div>
 
                 <h2>
                   Neo<span>Vault</span>
                 </h2>
+
+                </div>
+                <button className="mobile-close" onClick={closeMenu} 
+                aria-label="Close Menu">
+                  <X size={34} />
+                </button>
 
               </div>
 

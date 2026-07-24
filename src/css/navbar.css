@@ -198,10 +198,14 @@
 }
 
 .mobile-header{
-    margin-bottom:70px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 1rem;
+    width:100%;
+    margin-bottom:3rem;
     padding-bottom:2.5rem;
     border-bottom:1px solid rgba(255,255,255,.06);
-    width:min(88%,420px);
     text-align:center;
 }
 
@@ -211,6 +215,23 @@
 
 .mobile-header span{
     color:#A855F7;
+}
+
+.mobile-close{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:56px;
+    height:56px;
+    border:none;
+    background: inherit;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.mobile-close:hover{
+    background:#A855F7;
 }
 
 .mobile-menu a{
@@ -249,26 +270,20 @@
 
 
 @media (max-width:768px){
-
     .desktop-nav{
-
         display:none;
     }
 
     .desktop-btn{
-
         display:none;
     }
 
     .menu-toggle{
-
         display:flex;
     }
 
     .navbar{
-
         justify-content:space-between;
     }
-
 }
 
